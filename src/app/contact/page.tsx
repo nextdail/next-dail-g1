@@ -40,8 +40,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+      {/* Hero Section - ONLY FIXED NAVBAR SPACING */}
+      <section className="pt-28 sm:pt-32 lg:pt-40 pb-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500 rounded-full blur-[150px]" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-300 rounded-full blur-[150px]" />

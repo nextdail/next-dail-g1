@@ -40,11 +40,11 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500 rounded-full blur-[150px]" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-300 rounded-full blur-[150px]" />
+      {/* Hero Section - Fixed Navbar Overlap */}
+      <section className="pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-teal-500 rounded-full blur-[120px] sm:blur-[150px]" />
+          <div className="absolute bottom-0 left-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-teal-300 rounded-full blur-[120px] sm:blur-[150px]" />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -54,62 +54,62 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 bg-teal-500/20 text-teal-300 rounded-full text-base font-bold mb-6">
+            <span className="inline-block px-4 py-2 bg-teal-500/20 text-teal-300 rounded-full text-sm sm:text-base font-black mb-4 sm:mb-6 border border-teal-500/30">
               About Us
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 leading-tight">
               Building Digital Success Since 2014
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed font-semibold">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed font-semibold">
               We're a passionate team of digital innovators dedicated to transforming 
               businesses through cutting-edge technology and creative excellence
             </p>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats - Mobile Friendly */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16"
           >
-            <div className="text-center">
-              <div className="text-4xl font-black text-teal-400 mb-2">10+</div>
-              <div className="text-gray-300 font-bold">Years Experience</div>
+            <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-black text-teal-400 mb-2">10+</div>
+              <div className="text-xs sm:text-sm text-gray-300 font-bold">Years Experience</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-black text-teal-400 mb-2">500+</div>
-              <div className="text-gray-300 font-bold">Happy Clients</div>
+            <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-black text-teal-400 mb-2">500+</div>
+              <div className="text-xs sm:text-sm text-gray-300 font-bold">Happy Clients</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-black text-teal-400 mb-2">50+</div>
-              <div className="text-gray-300 font-bold">Team Members</div>
+            <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-black text-teal-400 mb-2">50+</div>
+              <div className="text-xs sm:text-sm text-gray-300 font-bold">Team Members</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-black text-teal-400 mb-2">98%</div>
-              <div className="text-gray-300 font-bold">Success Rate</div>
+            <div className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20">
+              <div className="text-3xl sm:text-4xl font-black text-teal-400 mb-2">98%</div>
+              <div className="text-xs sm:text-sm text-gray-300 font-bold">Success Rate</div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-20 bg-cream-50">
+      {/* Mission & Vision - Mobile Optimized */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-cream-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-10 rounded-3xl shadow-xl"
+              className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100"
             >
-              <div className="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-black text-slate-900 mb-4">Our Mission</h2>
-              <p className="text-slate-600 leading-relaxed font-semibold text-lg">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3 sm:mb-4">Our Mission</h2>
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-semibold">
                 To empower businesses with innovative digital solutions that drive growth, 
                 enhance customer experiences, and create lasting impact in the digital landscape. 
                 We believe every business deserves world-class digital presence.
@@ -120,16 +120,16 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-10 rounded-3xl shadow-xl"
+              className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100"
             >
-              <div className="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg">
+                <svg className="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-black text-slate-900 mb-4">Our Vision</h2>
-              <p className="text-slate-600 leading-relaxed font-semibold text-lg">
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3 sm:mb-4">Our Vision</h2>
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-semibold">
                 To be the leading digital transformation partner, recognized globally for 
                 excellence, innovation, and results. We envision a future where every business 
                 leverages technology to its fullest potential.
@@ -139,19 +139,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-white">
+      {/* Timeline - Mobile Friendly */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mb-3 sm:mb-4">
               Our Journey
             </h2>
-            <p className="text-xl text-slate-600 font-semibold">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-semibold">
               A decade of growth, innovation, and success
             </p>
           </motion.div>
@@ -164,13 +164,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative pl-8 pb-12 border-l-4 border-teal-500 last:pb-0"
+                className="relative pl-6 sm:pl-8 pb-8 sm:pb-12 border-l-2 sm:border-l-4 border-teal-500 last:pb-0"
               >
-                <div className="absolute -left-3 top-0 w-6 h-6 bg-teal-500 rounded-full border-4 border-white shadow-lg" />
-                <div className="bg-cream-50 p-6 rounded-2xl hover:shadow-lg transition-all">
-                  <div className="text-2xl font-black text-teal-600 mb-2">{item.year}</div>
-                  <h3 className="text-xl font-black text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-slate-600 font-semibold">{item.description}</p>
+                <div className="absolute -left-2 sm:-left-3 top-0 w-4 h-4 sm:w-6 sm:h-6 bg-teal-500 rounded-full border-2 sm:border-4 border-white shadow-lg" />
+                <div className="bg-cream-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl hover:shadow-lg transition-all">
+                  <div className="text-xl sm:text-2xl font-black text-teal-600 mb-2">{item.year}</div>
+                  <h3 className="text-lg sm:text-xl font-black text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-slate-600 font-semibold">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -178,24 +178,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-cream-50">
+      {/* Values - Mobile Grid */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-cream-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mb-3 sm:mb-4">
               Our Core Values
             </h2>
-            <p className="text-xl text-slate-600 font-semibold">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-semibold">
               The principles that guide everything we do
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -203,35 +203,35 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center"
+                className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center border border-slate-100"
               >
-                <div className="text-6xl mb-4">{value.icon}</div>
-                <h3 className="text-2xl font-black text-slate-900 mb-3">{value.title}</h3>
-                <p className="text-slate-600 font-semibold leading-relaxed">{value.description}</p>
+                <div className="text-5xl sm:text-6xl mb-4">{value.icon}</div>
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">{value.title}</h3>
+                <p className="text-sm sm:text-base text-slate-600 font-semibold leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 bg-white">
+      {/* Team - IMPROVED & Mobile Friendly */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mb-3 sm:mb-4">
               Meet Our Team
             </h2>
-            <p className="text-xl text-slate-600 font-semibold">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-semibold">
               The talented people behind our success
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
@@ -239,25 +239,25 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100"
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-72 sm:h-80 overflow-hidden">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-2xl font-black text-white mb-1">{member.name}</h3>
-                    <p className="text-teal-300 font-bold mb-3">{member.role}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-black text-white mb-1">{member.name}</h3>
+                    <p className="text-teal-300 font-bold text-sm sm:text-base mb-3">{member.role}</p>
                     {member.linkedin && (
                       <a
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-white hover:text-teal-300 transition-colors"
+                        className="inline-flex items-center gap-2 text-white hover:text-teal-300 transition-colors text-sm sm:text-base active:scale-95"
                       >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
@@ -268,11 +268,11 @@ export default function AboutPage() {
                     )}
                   </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-slate-600 mb-4 font-semibold">{member.bio}</p>
+                <div className="p-4 sm:p-6">
+                  <p className="text-sm sm:text-base text-slate-600 mb-4 font-semibold leading-relaxed">{member.bio}</p>
                   <div className="flex flex-wrap gap-2">
                     {member.expertise.map((skill, i) => (
-                      <span key={i} className="px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-sm font-bold">
+                      <span key={i} className="px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs sm:text-sm font-bold">
                         {skill}
                       </span>
                     ))}
@@ -284,26 +284,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-teal-500 to-teal-700 text-white">
+      {/* CTA - Mobile Friendly */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-black mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-4 sm:mb-6">
               Ready to Start Your Digital Journey?
             </h2>
-            <p className="text-xl mb-8 opacity-90 font-semibold max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 font-semibold max-w-2xl mx-auto">
               Let's work together to transform your business with innovative digital solutions
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-teal-600 rounded-xl hover:bg-cream-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-black text-base"
+              className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 bg-white text-teal-600 rounded-xl hover:bg-cream-50 transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-105 active:scale-100 font-black text-base sm:text-lg"
             >
               Get in Touch
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>

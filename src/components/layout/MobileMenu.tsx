@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NAV_LINKS } from '../../lib/constants';
 import { motion } from 'framer-motion';
+import { X, ArrowRight, Rocket } from 'lucide-react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -34,7 +35,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-40 lg:hidden pt-24"
+      className="fixed inset-0 z-[60] lg:hidden"
     >
       {/* Backdrop */}
       <motion.div
@@ -45,26 +46,23 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         onClick={onClose}
       />
 
-      {/* Menu Panel */}
+      {/* Menu Panel - FIXED: Now appears above navbar */}
       <motion.div
         initial={{ x: '100%' }}
         animate={{ x: 0 }}
         exit={{ x: '100%' }}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl flex flex-col"
+        className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl flex flex-col pt-24"
       >
         {/* Header with Close Button */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gradient-to-r from-teal-50 to-white">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-teal-50 to-white">
           <span className="text-2xl font-black text-slate-900">Menu</span>
           <button
             onClick={onClose}
-            className="p-3 hover:bg-gray-200 rounded-lg transition-all active:scale-95"
+            className="p-3 hover:bg-gray-200 rounded-xl transition-all active:scale-95 group"
             aria-label="Close menu"
           >
-            {/* Improved Close Icon */}
-            <svg className="w-9 h-9 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X className="w-9 h-9 text-slate-900 group-hover:rotate-90 transition-transform" strokeWidth={3} />
           </button>
         </div>
 
@@ -80,13 +78,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <Link
                 href={link.href}
                 onClick={onClose}
-                className={`block w-full px-6 py-5 rounded-xl text-lg font-black transition-all duration-300 text-center ${
+                className={`group flex items-center justify-between w-full px-6 py-5 rounded-xl text-lg font-black transition-all duration-300 ${
                   pathname === link.href
-                    ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white shadow-lg scale-105'
+                    ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white shadow-lg'
                     : 'text-slate-900 bg-gray-100 hover:bg-teal-50 active:bg-teal-100'
                 }`}
               >
-                {link.label}
+                <span>{link.label}</span>
+                <ArrowRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${pathname === link.href ? 'text-white' : 'text-teal-600'}`} strokeWidth={3} />
               </Link>
             </motion.div>
           ))}
@@ -102,13 +101,14 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <Link
             href="/contact"
             onClick={onClose}
-            className="block w-full px-6 py-5 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-center rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all font-black text-lg shadow-lg active:scale-95"
+            className="group flex items-center justify-center gap-2 w-full px-6 py-5 bg-gradient-to-r from-teal-500 to-teal-600 text-white text-center rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all font-black text-lg shadow-lg active:scale-95"
           >
-            Get Started Free 🚀
+            <span>Get Started Free</span>
+            <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" strokeWidth={3} />
           </Link>
           <button
             onClick={onClose}
-            className="w-full px-6 py-4 bg-gray-100 text-slate-900 text-center rounded-xl hover:bg-gray-200 transition-all font-bold text-base"
+            className="w-full px-6 py-4 bg-gray-100 text-slate-900 text-center rounded-xl hover:bg-gray-200 transition-all font-bold text-base active:scale-95"
           >
             Close Menu
           </button>

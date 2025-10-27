@@ -5,6 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { services } from '../../data/services';
+import { ArrowRight, Check, MessageCircle } from 'lucide-react';
+import { formatWhatsAppLink } from '../../lib/utils';
+import { BUSINESS_INFO } from '../../lib/constants';
 
 const categories = [
   { id: 'all', name: 'All Services', count: 16 },
@@ -23,8 +26,8 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-cream-50 to-white">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      {/* Hero Section - FIXED NAVBAR OVERLAP */}
+      <section className="pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[150px]" />
@@ -112,73 +115,87 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
               >
-                <Link href={`/services/${service.slug}`}>
-                  <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2">
-                    {/* Service Image */}
-                    <div className="relative h-64 overflow-hidden">
-                      <Image
-                        src={service.image}
-                        alt={service.name}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="px-4 py-1.5 bg-white/20 backdrop-blur-md text-white text-sm font-bold rounded-full border border-white/20">
-                          {service.category}
-                        </span>
-                      </div>
-
-                      {/* Icon */}
-                      <div className="absolute bottom-4 left-4">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-4xl border border-white/20">
-                          {service.icon}
-                        </div>
-                      </div>
-
-                      {/* Pricing Badge */}
-                      {service.pricing && (
-                        <div className="absolute bottom-4 right-4">
-                          <div className="px-4 py-2 bg-teal-500 backdrop-blur-md text-white text-sm font-bold rounded-full">
-                            From ₹{(service.pricing.starter / 1000).toFixed(0)}K
-                          </div>
-                        </div>
-                      )}
+                <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:-translate-y-2">
+                  {/* Service Image */}
+                  <div className="relative h-64 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-4 py-1.5 bg-white/20 backdrop-blur-md text-white text-sm font-bold rounded-full border border-white/20">
+                        {service.category}
+                      </span>
                     </div>
 
-                    {/* Service Content */}
-                    <div className="p-8">
-                      <h3 className="text-2xl font-black text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">
-                        {service.name}
-                      </h3>
-                      <p className="text-slate-600 mb-6 line-clamp-2 leading-relaxed font-semibold">
-                        {service.description}
-                      </p>
-                      
-                      {/* Features Preview */}
-                      <ul className="space-y-2 mb-6">
-                        {service.features.slice(0, 3).map((feature, i) => (
-                          <li key={i} className="flex items-center text-sm font-semibold text-slate-600">
-                            <svg className="w-5 h-5 text-teal-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* CTA */}
-                      <div className="flex items-center text-teal-600 font-black group-hover:gap-3 gap-2 transition-all text-base">
-                        Learn More
-                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                    {/* Icon */}
+                    <div className="absolute bottom-4 left-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-4xl border border-white/20">
+                        {service.icon}
                       </div>
+                    </div>
+
+                    {/* Pricing Badge */}
+                    {service.pricing && (
+                      <div className="absolute bottom-4 right-4">
+                        <div className="px-4 py-2 bg-teal-500 backdrop-blur-md text-white text-sm font-bold rounded-full">
+                          From ₹{(service.pricing.starter / 1000).toFixed(0)}K
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Service Content */}
+                  <div className="p-8">
+                    <h3 className="text-2xl font-black text-slate-900 mb-3 group-hover:text-teal-600 transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="text-slate-600 mb-6 line-clamp-2 leading-relaxed font-semibold">
+                      {service.description}
+                    </p>
+                    
+                    {/* Features Preview */}
+                    <ul className="space-y-2 mb-6">
+                      {service.features.slice(0, 3).map((feature, i) => (
+                        <li key={i} className="flex items-center text-sm font-semibold text-slate-600">
+                          <Check className="w-5 h-5 text-teal-500 mr-2 flex-shrink-0" strokeWidth={3} />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Action Buttons - Side by Side */}
+                    <div className="flex gap-3">
+                      {/* WhatsApp Button */}
+                      <a
+                        href={formatWhatsAppLink(BUSINESS_INFO.whatsapp, `Hi, I'm interested in ${service.name}`)}
+                        onClick={(e) => e.stopPropagation()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366] text-white rounded-xl hover:bg-[#20BA5A] transition-all font-black text-sm shadow-lg active:scale-95"
+                      >
+                        <MessageCircle className="w-4 h-4" strokeWidth={2.5} />
+                        <span className="hidden sm:inline">WhatsApp</span>
+                        <span className="sm:hidden">Chat</span>
+                      </a>
+
+                      {/* Learn More Button */}
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-teal-600 text-white rounded-xl hover:bg-teal-700 transition-all font-black text-sm shadow-lg"
+                      >
+                        <span className="hidden sm:inline">Learn More</span>
+                        <span className="sm:hidden">Details</span>
+                        <ArrowRight className="w-4 h-4" strokeWidth={3} />
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -201,9 +218,7 @@ export default function ServicesPage() {
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-teal-600 rounded-xl hover:bg-cream-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-black text-base"
             >
               Contact Us for Custom Solutions
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <ArrowRight className="w-5 h-5" strokeWidth={3} />
             </Link>
           </motion.div>
         </div>

@@ -7,8 +7,8 @@ import { resources, externalTools } from '../../data/resources';
 export default function ResourcesPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
+      {/* Hero - ONLY FIXED NAVBAR SPACING */}
+      <section className="pt-28 sm:pt-32 lg:pt-40 pb-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500 rounded-full blur-[150px]" />
         </div>
