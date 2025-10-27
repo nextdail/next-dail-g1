@@ -1,0 +1,47 @@
+export const caseStudies = [
+  {
+    id: 1,
+    slug: 'ecommerce-transformation',
+    title: 'E-commerce Transformation: 300% Revenue Growth',
+    client: 'Fashion Hub',
+    industry: 'E-commerce',
+    description: 'Complete platform overhaul leading to massive sales increase',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600',
+    results: [
+      { label: 'Revenue Growth', value: '300%', change: '+300%' },
+      { label: 'Conversion Rate', value: '8.5%', change: '+180%' },
+      { label: 'Page Load Time', value: '1.2s', change: '-65%' },
+    ],
+    featured: true,
+  },
+  {
+    id: 2,
+    slug: 'seo-success-story',
+    title: 'SEO Success: Dominating Search Results',
+    client: 'TechStart India',
+    industry: 'Technology',
+    description: 'Strategic SEO campaign achieving top rankings',
+    image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=600',
+    results: [
+      { label: 'Organic Traffic', value: '450%', change: '+450%' },
+      { label: 'Keywords Ranked', value: '120+', change: '+200%' },
+      { label: 'Domain Authority', value: '65', change: '+40' },
+    ],
+    featured: true,
+  },
+  {
+    id: 3,
+    slug: 'mobile-app-launch',
+    title: 'Mobile App Launch: 50K+ Downloads',
+    client: 'HealthTech Solutions',
+    industry: 'Healthcare',
+    description: 'Native app development with exceptional user adoption',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600',
+    results: [
+      { label: 'Downloads', value: '50K+', change: 'First 3 months' },
+      { label: 'App Rating', value: '4.8/5', change: '2500+ reviews' },
+      { label: 'Daily Users', value: '15K', change: 'Active' },
+    ],
+    featured: true,
+  },
+];

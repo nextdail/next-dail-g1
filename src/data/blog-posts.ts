@@ -1,0 +1,47 @@
+export const blogPosts = [
+  {
+    id: 1,
+    slug: 'seo-trends-2024',
+    title: 'Top SEO Trends to Watch in 2024',
+    excerpt: 'Discover the latest SEO strategies that will dominate search rankings this year',
+    category: 'SEO',
+    tags: ['SEO', 'Digital Marketing', 'Trends'],
+    image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=600',
+    author: {
+      name: 'Amit Kumar',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150',
+    },
+    publishedAt: '2024-01-15',
+    readTime: 8,
+  },
+  {
+    id: 2,
+    slug: 'website-performance',
+    title: 'Why Website Performance Matters More Than Ever',
+    excerpt: 'Learn how page speed impacts conversions and search rankings',
+    category: 'Web Development',
+    tags: ['Performance', 'Web Development', 'UX'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600',
+    author: {
+      name: 'Vikram Singh',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150',
+    },
+    publishedAt: '2024-01-10',
+    readTime: 6,
+  },
+  {
+    id: 3,
+    slug: 'social-media-strategy',
+    title: 'Building an Effective Social Media Strategy',
+    excerpt: 'Step-by-step guide to creating engaging social media campaigns',
+    category: 'Social Media',
+    tags: ['Social Media', 'Marketing', 'Strategy'],
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600',
+    author: {
+      name: 'Sneha Gupta',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150',
+    },
+    publishedAt: '2024-01-05',
+    readTime: 10,
+  },
+];
