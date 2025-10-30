@@ -25,24 +25,35 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'py-2 sm:py-3 backdrop-blur-xl bg-white/80 shadow-[0_4px_20px_rgba(33,128,141,0.08)]'
-            : 'py-3 sm:py-5 backdrop-blur-md bg-white/60'
+            ? 'py-3 sm:py-3 backdrop-blur-xl bg-white/90 shadow-lg'
+            : 'py-4 sm:py-5 backdrop-blur-md bg-white/80'
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo - Better Mobile Spacing */}
-            <Link href="/" className="flex items-center space-x-3 group pl-2 sm:pl-0">
-              <div className="relative w-14 h-14 sm:w-12 sm:h-12 bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 rounded-xl flex items-center justify-center shadow-[0_4px_12px_rgba(33,128,141,0.3)] group-hover:shadow-[0_6px_20px_rgba(33,128,141,0.4)] transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-black text-3xl sm:text-2xl">N</span>
-                <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative w-12 h-12 sm:w-12 sm:h-12 bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <span className="text-white font-black text-2xl">N</span>
               </div>
-              <span className="text-2xl font-black text-slate-900 tracking-tight hidden sm:inline">
+              <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight hidden sm:inline">
                 Next Dail
               </span>
             </Link>
@@ -71,25 +82,24 @@ export default function Navbar() {
             <div className="hidden lg:block">
               <Link
                 href="/contact"
-                className="relative px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-[0_4px_12px_rgba(33,128,141,0.25)] hover:shadow-[0_6px_20px_rgba(33,128,141,0.35)] hover:scale-105 font-bold text-base overflow-hidden group"
+                className="relative px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-bold text-base"
               >
-                <span className="relative z-10">Get Started</span>
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                Get Started
               </Link>
             </div>
 
-            {/* Mobile Menu Button - BIGGER Icon */}
+            {/* Mobile Menu Button - BIGGER ICON */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-3 rounded-xl hover:bg-teal-50 transition-all duration-300 group active:scale-95 pr-2 sm:pr-0"
+              className="lg:hidden p-2.5 rounded-xl hover:bg-teal-50 transition-all duration-300 group active:scale-95"
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
               type="button"
             >
               {isMobileMenuOpen ? (
-                <X className="w-10 h-10 sm:w-8 sm:h-8 text-slate-900 transition-transform group-hover:rotate-90" strokeWidth={3} />
+                <X className="w-9 h-9 sm:w-8 sm:h-8 text-slate-900" strokeWidth={2.5} />
               ) : (
-                <Menu className="w-10 h-10 sm:w-8 sm:h-8 text-slate-900 transition-transform group-hover:scale-110" strokeWidth={3} />
+                <Menu className="w-9 h-9 sm:w-8 sm:h-8 text-slate-900" strokeWidth={2.5} />
               )}
             </button>
           </div>

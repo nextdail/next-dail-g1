@@ -8,8 +8,8 @@ import { fadeInUp, staggerContainer } from '../../lib/animation';
 export default function HeroSection() {
   return (
     <>
-      {/* MOBILE DESIGN - Premium New Layout */}
-      <section className="relative lg:hidden min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 pb-8 px-4 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      {/* MOBILE DESIGN - Original Design with Side Padding */}
+      <section className="relative lg:hidden min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-8 px-10 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
         {/* Mobile Background Orbs */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-20 right-10 w-48 h-48 bg-teal-500 rounded-full blur-[60px]" />
@@ -138,8 +138,8 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* DESKTOP DESIGN - Original Premium Layout */}
-      <section className="relative hidden lg:flex min-h-screen items-center overflow-hidden pt-32 pb-28">
+      {/* DESKTOP DESIGN - Allow Top to Go Inside Navbar */}
+      <section className="relative hidden lg:flex min-h-screen items-center overflow-hidden pt-24 pb-28">
         {/* Desktop Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-cream-50 via-white to-teal-50/30" />
         
@@ -246,7 +246,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               className="relative"
             >
               <div className="relative w-full h-[650px]">
@@ -280,7 +280,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.8, duration: 0.8 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <div className="flex flex-col items-center gap-2">
