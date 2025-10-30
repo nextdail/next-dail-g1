@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NAV_LINKS } from '../../lib/constants';
 import { Menu, X } from 'lucide-react';
@@ -25,7 +26,6 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -40,22 +40,37 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-12 ${
           isScrolled
             ? 'py-3 sm:py-3 backdrop-blur-xl bg-white/90 shadow-lg'
             : 'py-4 sm:py-5 backdrop-blur-md bg-white/80'
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-10 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative w-12 h-12 sm:w-12 sm:h-12 bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-black text-2xl">N</span>
+            {/* Logo - Mobile & Desktop */}
+            <Link href="/" className="flex items-center group">
+              {/* Mobile Logo - Square */}
+              <div className="relative w-[50px] h-[50px] lg:hidden">
+                <Image
+                  src="/images/Logo_Mobile.svg"
+                  alt="Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <span className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight hidden sm:inline">
-                Next Dail
-              </span>
+
+              {/* Desktop Logo - Wide */}
+              <div className="hidden lg:block relative w-[150px] h-[30px]">
+                <Image
+                  src="/images/Logo_Desktop.svg"
+                  alt="Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -88,7 +103,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button - BIGGER ICON */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="lg:hidden p-2.5 rounded-xl hover:bg-teal-50 transition-all duration-300 group active:scale-95"
