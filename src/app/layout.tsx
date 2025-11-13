@@ -48,13 +48,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        {/* <Navbar />
+        <Navbar />
         <main className="min-h-screen">
           {children}
           <Analytics />
         </main>
         <Footer />
-        <FloatingContacts /> */}
+        <FloatingContacts />
       </body>
     </html>
   );
