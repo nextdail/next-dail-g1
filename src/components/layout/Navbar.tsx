@@ -99,7 +99,7 @@ export default function Navbar() {
                 href="/contact"
                 className="relative px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-bold text-base"
               >
-                Get Starte
+                Get Started
               </Link>
             </div>
 
