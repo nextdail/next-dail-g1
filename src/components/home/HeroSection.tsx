@@ -8,12 +8,12 @@ import { fadeInUp, staggerContainer } from '../../lib/animation';
 export default function HeroSection() {
   return (
     <>
-      {/* MOBILE DESIGN - Original Design with Side Padding */}
+      {/* MOBILE DESIGN - With Red Promotional Colors */}
       <section className="relative lg:hidden min-h-screen flex flex-col items-center justify-center overflow-hidden pt-28 pb-8 px-10 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
         {/* Mobile Background Orbs */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-20 right-10 w-48 h-48 bg-teal-500 rounded-full blur-[60px]" />
-          <div className="absolute -bottom-20 left-10 w-48 h-48 bg-teal-300 rounded-full blur-[60px]" />
+          <div className="absolute -bottom-20 left-10 w-48 h-48 bg-red-500 rounded-full blur-[60px]" />
         </div>
 
         <div className="relative z-10 w-full flex flex-col items-center space-y-0">
@@ -24,7 +24,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="w-full mb-8"
           >
-            <div className="relative h-72 rounded-3xl overflow-hidden ring-2 ring-teal-500/50 shadow-2xl">
+            <div className="relative h-72 rounded-3xl overflow-hidden ring-2 ring-red-500/60 shadow-2xl shadow-red-500/20">
               <Image
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400"
                 alt="Digital Solutions"
@@ -34,9 +34,16 @@ export default function HeroSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
               
+              {/* Discount Badge - NEW RED! */}
+              <div className="absolute top-4 right-4">
+                <div className="px-3 py-1.5 bg-red-500 text-white rounded-full text-xs font-black shadow-lg animate-pulse">
+                  60% OFF
+                </div>
+              </div>
+              
               {/* Floating Badge on Image */}
               <div className="absolute top-4 left-4">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-500 text-white rounded-full text-xs font-black shadow-lg">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full text-xs font-black shadow-lg">
                   <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
                   #1 Digital Agency
                 </span>
@@ -44,12 +51,12 @@ export default function HeroSection() {
 
               {/* Stats on Image */}
               <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-lg p-2 text-center">
-                  <div className="text-xl font-black text-teal-300">500+</div>
+                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-lg p-2 text-center border border-red-500/30">
+                  <div className="text-xl font-black text-red-400">500+</div>
                   <div className="text-xs text-white font-bold">Projects</div>
                 </div>
-                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-lg p-2 text-center">
-                  <div className="text-xl font-black text-teal-300">98%</div>
+                <div className="flex-1 bg-white/10 backdrop-blur-md rounded-lg p-2 text-center border border-red-500/30">
+                  <div className="text-xl font-black text-red-400">98%</div>
                   <div className="text-xs text-white font-bold">Success</div>
                 </div>
               </div>
@@ -63,10 +70,10 @@ export default function HeroSection() {
             variants={staggerContainer}
             className="w-full space-y-5 text-center"
           >
-            {/* Badge */}
+            {/* Special Offer Badge - RED */}
             <motion.div variants={fadeInUp}>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/10 text-teal-300 rounded-full text-xs font-bold backdrop-blur-sm border border-teal-500/30">
-                ⭐ Premium Digital Services
+              <span className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full text-xs font-black backdrop-blur-sm border border-red-400/30 shadow-lg">
+                🔥 Limited Time: Up to 60% OFF
               </span>
             </motion.div>
 
@@ -76,7 +83,7 @@ export default function HeroSection() {
               className="text-4xl font-black text-white leading-tight"
             >
               Your Digital
-              <span className="block mt-1 bg-gradient-to-r from-teal-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block mt-1 bg-gradient-to-r from-red-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
                 Growth Partner
               </span>
             </motion.h1>
@@ -89,33 +96,33 @@ export default function HeroSection() {
               We build powerful digital solutions that turn your vision into reality and drive real business results
             </motion.p>
 
-            {/* Quick Stats - Horizontal */}
+            {/* Quick Stats - Horizontal with RED accents */}
             <motion.div
               variants={fadeInUp}
               className="flex justify-center gap-3 pt-2"
             >
-              <div className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-teal-500/20 to-teal-600/20 rounded-lg border border-teal-500/30 backdrop-blur-sm">
-                <span className="text-sm font-black text-teal-300">10+ Years</span>
+              <div className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-lg border border-red-500/40 backdrop-blur-sm">
+                <span className="text-sm font-black text-red-400">10+ Years</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-teal-500/20 to-teal-600/20 rounded-lg border border-teal-500/30 backdrop-blur-sm">
-                <span className="text-sm font-black text-teal-300">50+ Team</span>
+              <div className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-lg border border-red-500/40 backdrop-blur-sm">
+                <span className="text-sm font-black text-red-400">50+ Team</span>
               </div>
             </motion.div>
 
-            {/* Premium CTA Buttons */}
+            {/* Premium CTA Buttons - RED PRIMARY */}
             <motion.div
               variants={fadeInUp}
               className="space-y-2.5 pt-2"
             >
               <Link
                 href="/contact"
-                className="block w-full px-6 py-3.5 bg-gradient-to-r from-teal-500 via-teal-500 to-cyan-500 text-white rounded-xl font-black text-base shadow-2xl shadow-teal-500/40 active:scale-95 transition-transform hover:shadow-3xl hover:shadow-teal-500/50"
+                className="block w-full px-6 py-3.5 bg-gradient-to-r from-red-500 via-red-600 to-orange-500 text-white rounded-xl font-black text-base shadow-2xl shadow-red-500/40 active:scale-95 transition-transform hover:shadow-3xl hover:shadow-red-500/50 border border-red-400/30"
               >
                 Let's Work Together 🚀
               </Link>
               <Link
                 href="/case-studies"
-                className="block w-full px-6 py-3.5 bg-white/10 backdrop-blur-md text-white rounded-xl font-bold text-base border-2 border-teal-500/40 hover:border-teal-500 hover:bg-white/20 transition-all active:scale-95"
+                className="block w-full px-6 py-3.5 bg-white/10 backdrop-blur-md text-white rounded-xl font-bold text-base border-2 border-red-500/40 hover:border-red-500 hover:bg-white/20 transition-all active:scale-95"
               >
                 See Our Success Stories
               </Link>
@@ -128,9 +135,9 @@ export default function HeroSection() {
             >
               <p className="text-xs text-gray-400 font-bold mb-3">TRUSTED BY</p>
               <div className="flex items-center justify-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/50 flex items-center justify-center text-xs font-black text-teal-300">👤</div>
-                <div className="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/50 flex items-center justify-center text-xs font-black text-teal-300">👤</div>
-                <div className="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/50 flex items-center justify-center text-xs font-black text-teal-300">👤</div>
+                <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/50 flex items-center justify-center text-xs font-black text-red-400 shadow-lg shadow-red-500/20">👤</div>
+                <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/50 flex items-center justify-center text-xs font-black text-red-400 shadow-lg shadow-red-500/20">👤</div>
+                <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/50 flex items-center justify-center text-xs font-black text-red-400 shadow-lg shadow-red-500/20">👤</div>
                 <span className="text-xs text-gray-400 font-bold ml-2">+500 Clients</span>
               </div>
             </motion.div>
@@ -138,16 +145,16 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* DESKTOP DESIGN - Allow Top to Go Inside Navbar */}
+      {/* DESKTOP DESIGN - With Red Promotional Accents */}
       <section className="relative hidden lg:flex min-h-screen items-center overflow-hidden pt-24 pb-28">
         {/* Desktop Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cream-50 via-white to-teal-50/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-cream-50 via-white to-red-50/20" />
         
-        {/* Desktop Animated Mesh */}
+        {/* Desktop Animated Mesh with RED */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] animate-float" />
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brown-600/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: '2s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-300/10 rounded-full blur-[150px] animate-float" style={{ animationDelay: '4s' }} />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-500/15 rounded-full blur-[120px] animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-400/10 rounded-full blur-[150px] animate-float" style={{ animationDelay: '4s' }} />
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -159,7 +166,12 @@ export default function HeroSection() {
               variants={staggerContainer}
               className="space-y-8 text-left"
             >
+              {/* Special Offer Badge - RED */}
               <motion.div variants={fadeInUp}>
+                <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-full text-sm font-black shadow-lg mb-4">
+                  🔥 Limited Time: Up to 60% OFF All Services
+                </div>
+                <br />
                 <span className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 backdrop-blur-sm text-teal-700 rounded-full text-sm font-semibold shadow-sm">
                   <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse" />
                   Building Digital Success Since 2014
@@ -172,10 +184,10 @@ export default function HeroSection() {
               >
                 Transform Your Business with{' '}
                 <span className="relative inline-block mt-2">
-                  <span className="relative z-10 bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600 bg-clip-text text-transparent">
+                  <span className="relative z-10 bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-clip-text text-transparent">
                     Digital Excellence
                   </span>
-                  <span className="absolute bottom-2 left-0 right-0 h-3 bg-teal-500/20 -z-10" />
+                  <span className="absolute bottom-2 left-0 right-0 h-3 bg-red-500/20 -z-10" />
                 </span>
               </motion.h1>
 
@@ -184,7 +196,7 @@ export default function HeroSection() {
                 className="text-xl text-slate-600 leading-relaxed font-medium"
               >
                 We partner with forward-thinking companies to create digital experiences 
-                that drive <span className="font-bold text-slate-900">measurable growth</span>, engagement, and success
+                that drive <span className="font-bold text-red-600">measurable growth</span>, engagement, and success
               </motion.p>
 
               <motion.div
@@ -193,7 +205,7 @@ export default function HeroSection() {
               >
                 <Link
                   href="/contact"
-                  className="group relative px-8 py-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-bold overflow-hidden"
+                  className="group relative px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-bold overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Get Started Free
@@ -206,7 +218,7 @@ export default function HeroSection() {
                 
                 <Link
                   href="/case-studies"
-                  className="group px-8 py-4 border-2 border-teal-500/20 bg-white/60 backdrop-blur-sm text-teal-700 rounded-xl hover:border-teal-500 hover:bg-teal-50 transition-all duration-300 shadow-md font-bold"
+                  className="group px-8 py-4 border-2 border-red-500/30 bg-white/60 backdrop-blur-sm text-red-700 rounded-xl hover:border-red-500 hover:bg-red-50 transition-all duration-300 shadow-md font-bold"
                 >
                   <span className="flex items-center gap-2">
                     View Our Work
@@ -221,20 +233,20 @@ export default function HeroSection() {
                 variants={fadeInUp}
                 className="flex gap-4"
               >
-                <div className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
-                  <svg className="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm border border-red-100">
+                  <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                   <span className="text-sm font-bold text-slate-900">500+ Projects</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
-                  <svg className="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm border border-red-100">
+                  <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="text-sm font-bold text-slate-900">98% Satisfaction</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm">
-                  <svg className="w-5 h-5 text-teal-500" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-xl shadow-sm border border-red-100">
+                  <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                   </svg>
                   <span className="text-sm font-bold text-slate-900">10+ Years</span>
@@ -250,24 +262,31 @@ export default function HeroSection() {
               className="relative"
             >
               <div className="relative w-full h-[650px]">
+                {/* Discount Badge on Main Image */}
+                <div className="absolute top-4 right-4 z-20">
+                  <div className="px-5 py-2 bg-red-500 text-white rounded-full text-sm font-black shadow-2xl animate-pulse">
+                    60% OFF
+                  </div>
+                </div>
+                
                 <motion.div
                   animate={{ y: [0, -20, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute top-0 right-0 w-[420px] h-[300px] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(33,128,141,0.15)] ring-1 ring-black/5"
+                  className="absolute top-0 right-0 w-[420px] h-[300px] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(239,68,68,0.2)] ring-2 ring-red-500/20"
                 >
                   <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400" alt="Team collaboration" fill className="object-cover" priority />
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, -15, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                  className="absolute top-56 left-0 w-[370px] h-[240px] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(33,128,141,0.15)] ring-1 ring-black/5"
+                  className="absolute top-56 left-0 w-[370px] h-[240px] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(239,68,68,0.15)] ring-1 ring-black/5"
                 >
                   <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350" alt="Analytics dashboard" fill className="object-cover" />
                 </motion.div>
                 <motion.div
                   animate={{ y: [0, -25, 0] }}
                   transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-                  className="absolute bottom-0 right-20 w-[220px] h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(33,128,141,0.2)] ring-1 ring-black/5"
+                  className="absolute bottom-0 right-20 w-[220px] h-[350px] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(239,68,68,0.2)] ring-1 ring-black/5"
                 >
                   <Image src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=500" alt="Mobile app" fill className="object-cover" />
                 </motion.div>
@@ -286,7 +305,7 @@ export default function HeroSection() {
           <div className="flex flex-col items-center gap-2">
             <span className="text-xs font-semibold text-slate-500 tracking-wide uppercase">Scroll to explore</span>
             <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-6 h-10 border-2 border-slate-300 rounded-full flex items-start justify-center p-2">
-              <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
+              <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-1.5 h-1.5 bg-red-500 rounded-full" />
             </motion.div>
           </div>
         </motion.div>
